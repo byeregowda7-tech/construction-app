@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import FloatingSocialMedia from './components/FloatingSocialMedia';
-import Estimator from './components/Estimator';
 import { Building2, Hammer, Home, Users, Award, Briefcase } from 'lucide-react';
 
 function App() {
@@ -64,7 +63,6 @@ function App() {
               <a href="#projects" className="text-gray-600 hover:text-blue-600 transition">Projects</a>
               <a href="#about" className="text-gray-600 hover:text-blue-600 transition">About</a>
               <a href="#contact" className="text-gray-600 hover:text-blue-600 transition">Contact</a>
-              <a href="#estimator" className="text-gray-600 hover:text-blue-600 transition">Estimator</a>
             </div>
             <div className="flex items-center gap-3">
               <button
@@ -183,14 +181,6 @@ function App() {
           <button className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition font-semibold text-lg">
             Contact Us Now
           </button>
-        </div>
-      </section>
-
-      {/* Estimator Section */}
-      <section id="estimator" className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Project Cost Estimator</h2>
-          <Estimator />
         </div>
       </section>
 
