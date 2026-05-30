@@ -12,7 +12,7 @@ function App() {
   }, [theme]);
 
   return (
-    <div className={theme === 'dark' ? 'min-h-screen bg-gray-900 text-white' : 'min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-900'}>
+    <div className={theme === 'dark' ? 'dark min-h-screen bg-gray-900 text-white' : 'min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-900'}>
       {/* Floating Social Media Component */}
       <FloatingSocialMedia
         position="bottom-right"
@@ -44,14 +44,14 @@ function App() {
       />
 
       {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-40">
+      <nav className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
               <Building2 className="text-blue-600" size={32} />
               <button
                 onClick={() => window.location.reload()}
-                className="text-2xl font-bold text-gray-900 bg-transparent border-0 p-0 m-0 cursor-pointer focus:outline-none"
+                className="text-2xl font-bold text-gray-900 dark:text-white bg-transparent border-0 p-0 m-0 cursor-pointer focus:outline-none"
                 aria-label="Reload page"
                 title="Reload page"
               >
@@ -59,15 +59,15 @@ function App() {
               </button>
             </div>
             <div className="hidden md:flex gap-8">
-              <a href="#services" className="text-gray-600 hover:text-blue-600 transition">Services</a>
-              <a href="#projects" className="text-gray-600 hover:text-blue-600 transition">Projects</a>
-              <a href="#about" className="text-gray-600 hover:text-blue-600 transition">About</a>
-              <a href="#contact" className="text-gray-600 hover:text-blue-600 transition">Contact</a>
+              <a href="#services" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition">Services</a>
+              <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition">Projects</a>
+              <a href="#about" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition">About</a>
+              <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition">Contact</a>
             </div>
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="bg-gray-200 text-gray-800 px-3 py-2 rounded-md"
+                className={theme === 'dark' ? 'bg-gray-700 text-white px-3 py-2 rounded-md' : 'bg-gray-200 text-gray-800 px-3 py-2 rounded-md'}
                 aria-label="Toggle theme"
                 title="Toggle light/dark theme"
               >
@@ -85,10 +85,10 @@ function App() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Building Your Dreams With Excellence
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
               Professional construction services with a commitment to quality, safety, and customer satisfaction. Your vision, our expertise.
             </p>
             <div className="flex gap-4">
@@ -107,9 +107,9 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="bg-gray-50 py-20">
+      <section id="services" className="bg-gray-50 dark:bg-gray-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">Our Services</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">Our Services</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -145,10 +145,10 @@ function App() {
             ].map((service, index) => {
               const Icon = service.icon;
               return (
-                <div key={index} className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                <div key={index} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition">
                   <Icon size={40} className="text-blue-600 mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{service.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
                 </div>
               );
             })}
@@ -167,7 +167,7 @@ function App() {
           ].map((stat, index) => (
             <div key={index}>
               <p className="text-4xl font-bold text-blue-600 mb-2">{stat.number}</p>
-              <p className="text-gray-600 text-lg">{stat.label}</p>
+              <p className="text-gray-600 dark:text-gray-300 text-lg">{stat.label}</p>
             </div>
           ))}
         </div>
