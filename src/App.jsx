@@ -178,17 +178,25 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
           <p className="text-xl mb-8">Connect with us today for a free consultation</p>
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition font-semibold text-lg">
+          <a
+            href="mailto:contact@srbuildtec.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition font-semibold text-lg"
+          >
             Contact Us Now
-          </button>
+          </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
+      <footer id="contact" className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
           <p className="text-lg font-semibold">SRBUILDTEC</p>
           <p>Contact: +91-8660326541</p>
+          <p>
+            Email: <a href="mailto:contact@srbuildtec.com" className="text-blue-400 hover:text-blue-200">contact@srbuildtec.com</a>
+          </p>
           <p>&copy; 2026 SRBUILDTEC. All rights reserved.</p>
         </div>
       </footer>
