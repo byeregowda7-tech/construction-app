@@ -22,7 +22,7 @@ function App() {
         social={{
           whatsapp: {
             enabled: true,
-            link: 'https://wa.me/1234567890',
+            link: 'https://wa.me/918660326541',
             label: 'Chat on WhatsApp'
           },
           instagram: {
@@ -55,7 +55,7 @@ function App() {
                 aria-label="Reload page"
                 title="Reload page"
               >
-                Ganapathi Constructions
+                SRBUILDTEC
               </button>
             </div>
             <div className="hidden md:flex gap-8">
@@ -186,8 +186,10 @@ function App() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>&copy; 2024 Ganapathi Constructions. All rights reserved.</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
+          <p className="text-lg font-semibold">SRBUILDTEC</p>
+          <p>Contact: +91-8660326541</p>
+          <p>&copy; 2026 SRBUILDTEC. All rights reserved.</p>
         </div>
       </footer>
     </div>
