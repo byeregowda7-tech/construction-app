@@ -211,6 +211,7 @@ The component is fully responsive and adapts to all screen sizes:
 - [ ] Analytics tracking
 - [ ] Multi-language support
 - [ ] Dark mode toggle
+ - [x] Project Cost Estimator (materials, labor, contingency, CSV/JSON export)
 
 ## License
 

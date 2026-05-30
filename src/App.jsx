@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import FloatingSocialMedia from './components/FloatingSocialMedia';
+import Estimator from './components/Estimator';
 import { Building2, Hammer, Home, Users, Award, Briefcase } from 'lucide-react';
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    try { return localStorage.getItem('theme') || 'light'; } catch (e) { return 'light'; }
+  });
+
+  useEffect(() => {
+    try { localStorage.setItem('theme', theme); } catch (e) {}
+  }, [theme]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className={theme === 'dark' ? 'min-h-screen bg-gray-900 text-white' : 'min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-900'}>
       {/* Floating Social Media Component */}
       <FloatingSocialMedia
         position="bottom-right"
-        theme="dark"
+        theme={theme}
         showLabels={true}
         expandOnHover={true}
         social={{
@@ -41,17 +50,35 @@ function App() {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
               <Building2 className="text-blue-600" size={32} />
-              <span className="text-2xl font-bold text-gray-900">BuildHub</span>
+              <button
+                onClick={() => window.location.reload()}
+                className="text-2xl font-bold text-gray-900 bg-transparent border-0 p-0 m-0 cursor-pointer focus:outline-none"
+                aria-label="Reload page"
+                title="Reload page"
+              >
+                Ganapathi Constructions
+              </button>
             </div>
             <div className="hidden md:flex gap-8">
               <a href="#services" className="text-gray-600 hover:text-blue-600 transition">Services</a>
               <a href="#projects" className="text-gray-600 hover:text-blue-600 transition">Projects</a>
               <a href="#about" className="text-gray-600 hover:text-blue-600 transition">About</a>
               <a href="#contact" className="text-gray-600 hover:text-blue-600 transition">Contact</a>
+              <a href="#estimator" className="text-gray-600 hover:text-blue-600 transition">Estimator</a>
             </div>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-              Get Quote
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="bg-gray-200 text-gray-800 px-3 py-2 rounded-md"
+                aria-label="Toggle theme"
+                title="Toggle light/dark theme"
+              >
+                {theme === 'dark' ? '🌞 Light' : '🌙 Dark'}
+              </button>
+              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                Get Quote
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -159,10 +186,18 @@ function App() {
         </div>
       </section>
 
+      {/* Estimator Section */}
+      <section id="estimator" className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Project Cost Estimator</h2>
+          <Estimator />
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>&copy; 2024 BuildHub Construction. All rights reserved.</p>
+          <p>&copy; 2024 Ganapathi Constructions. All rights reserved.</p>
         </div>
       </footer>
     </div>
