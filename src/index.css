@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+body {
+  @apply bg-gray-50;
+}
+
+.floating-button {
+  @apply fixed bottom-8 z-40 cursor-pointer;
+  animation: bounce-slow 2s infinite;
+}
+
+.floating-button:hover {
+  @apply scale-110 shadow-2xl;
+  animation: none;
+}
+
+.social-container {
+  @apply fixed bottom-8 right-8 z-40;
+}
+
+.social-button-group {
+  @apply flex flex-col gap-3 items-end;
+}
+
+.social-button {
+  @apply w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white font-semibold relative overflow-hidden;
+}
+
+.social-button::before {
+  @apply absolute inset-0 opacity-0 hover:opacity-20 transition-opacity;
+  content: '';
+}
+
+.social-button:hover::before {
+  @apply bg-black;
+}
+
+.social-label {
+  @apply absolute right-20 bg-gray-900 text-white px-3 py-1 rounded-lg whitespace-nowrap text-sm font-medium opacity-0 hover:opacity-100 pointer-events-none;
+}
+
+@media (max-width: 768px) {
+  .social-container {
+    @apply bottom-4 right-4;
+  }
+
+  .floating-button {
+    @apply bottom-4 right-4;
+  }
+}
